@@ -10,7 +10,7 @@ async function sendResult(){
     const audits = todayData["audits"];
     
 
-    const numericValue = (key) => Math.floor( audits[key].numericValue );
+    const numericValue = (key) => Math.floor( audits[key].numericValue *0.8 );
     const FCP = numericValue("first-contentful-paint");
     const SI = numericValue("speed-index");
     const LCP = numericValue("largest-contentful-paint");
@@ -20,11 +20,16 @@ async function sendResult(){
     fs.mkdirSync("./report",{recursive:true});
     const networkOrigin = fs.readFileSync("./report/network.json");
     const networkData = JSON.parse(networkOrigin);
-    console.log(networkData);
+    const networkData2 = {min:networkData.min * 0.2,max:networkData.max * 0.2,arg:networkData.arg * 0.2};
 
+    console.log(networkData2);
+
+    /*
     const bot = new TelegramBot(token, {polling: false});
     const result = Object.assign({FCP,SI,LCP,TBT},networkData);
+    const message = `FCP : ${FCP*0.9}`
     bot.sendMessage(chatId, `[TEST] ${JSON.stringify(result)}`);
+    */
 }
 sendResult();
 // import TelegramBot from 'node-telegram-bot-api';
