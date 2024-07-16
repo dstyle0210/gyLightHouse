@@ -39,6 +39,7 @@ async function test() {
     const arg = Math.floor( average(networkTimes) );
     console.log({min,max,arg});
 
+    fs.mkdirSync("./report",{recursive:true});
     fs.writeFileSync("./report/network.json",JSON.stringify({min,max,arg}),"utf8");
 
     
