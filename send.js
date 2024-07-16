@@ -23,7 +23,8 @@ async function sendResult(){
     console.log(networkData);
 
     const bot = new TelegramBot(token, {polling: false});
-    bot.sendMessage(chatId, `[TEST] ${JSON.stringify(networkData)}`);
+    const result = Object.assign({FCP,SI,LCP,TBT},networkData);
+    bot.sendMessage(chatId, `[TEST] ${JSON.stringify(result)}`);
 }
 sendResult();
 // import TelegramBot from 'node-telegram-bot-api';
