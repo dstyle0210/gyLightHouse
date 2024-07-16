@@ -17,6 +17,7 @@ async function sendResult(){
     const TBT = numericValue("total-blocking-time");
     console.log({FCP,SI,LCP,TBT});
 
+    fs.mkdirSync("./report",{recursive:true});
     const networkOrigin = fs.readFileSync("./report/network.json");
     const networkData = JSON.parse(networkOrigin);
     console.log(networkData);
