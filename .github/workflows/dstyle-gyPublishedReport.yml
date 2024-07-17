@@ -1,4 +1,4 @@
-name: dstyle-gyReport
+name: dstyle-gyPublishedReport
 
 on:
   schedule:
