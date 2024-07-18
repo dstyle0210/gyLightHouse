@@ -2,7 +2,8 @@ name: dstyle-gyReport
 
 on:
   schedule:
-    - cron : '0 0 * * 1-5'
+    - cron : '0 23 * * 0-4'
+    - cron : '30 7 * * 2'
   push:
     branches: [ "main" ]
   pull_request:

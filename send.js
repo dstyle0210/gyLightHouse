@@ -24,11 +24,19 @@ async function sendResult(){
 
     console.log(networkData2);
 
-    
     const bot = new TelegramBot(token, {polling: false});
-    const result = Object.assign({FCP,SI,LCP,TBT},networkData2);
-    bot.sendMessage(chatId, `[TEST] ${JSON.stringify(result)}`);
-    
+    const res = Object.assign({FCP,SI,LCP,TBT},networkData2);
+    const template = `
+        [LightHouse:GyShop]\n
+        FCP : ${res.FCP},\n
+        SI : ${res.SI},\n
+        LCP : ${res.LCP},\n
+        TBT : ${res.TBT},
+        MIN : ${res.min},\n
+        MAX : ${res.max},\n
+        ARG : ${res.arg}
+    `;
+    bot.sendMessage(chatId, template);
 }
 sendResult();
 // import TelegramBot from 'node-telegram-bot-api';
