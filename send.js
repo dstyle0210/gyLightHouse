@@ -27,15 +27,14 @@ async function sendResult(){
     const bot = new TelegramBot(token, {polling: false});
     const res = Object.assign({FCP,SI,LCP,TBT},networkData2);
     const template = `
-        [LightHouse:GyShop]\n
-        FCP : ${res.FCP},\n
-        SI : ${res.SI},\n
-        LCP : ${res.LCP},\n
-        TBT : ${res.TBT},
-        MIN : ${res.min},\n
-        MAX : ${res.max},\n
-        ARG : ${res.arg}
-    `;
+[LightHouse:GyShop]
+FCP : ${res.FCP},
+SI : ${res.SI},
+LCP : ${res.LCP},
+TBT : ${res.TBT},
+MIN : ${res.min},
+MAX : ${res.max},
+ARG : ${res.arg}`;
     bot.sendMessage(chatId, template);
 }
 sendResult();
