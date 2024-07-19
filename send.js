@@ -1,9 +1,8 @@
 const fs = require("fs");
 const TelegramBot = require('node-telegram-bot-api');
-
-const token = '6168835435:AAEX-jYqum2mD4N2ath6_QihrqjPC5GJ-C4';
-const chatId = 6252259316;
-
+const token = process.env.TG_TOKEN_MABONGPAPA;
+const chatId = process.env.TG_CHATID_MABONGPAPA;
+console.log(token,chatId);
 async function sendResult(){
     const todayOrigin = fs.readFileSync("./report/today.json");
     const todayData = JSON.parse(todayOrigin);
@@ -37,5 +36,5 @@ MAX : ${res.max},
 ARG : ${res.arg}`;
     bot.sendMessage(chatId, template);
 }
-sendResult();
+// sendResult();
 // import TelegramBot from 'node-telegram-bot-api';

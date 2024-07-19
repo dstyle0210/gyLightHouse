@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "p":"node lighthouse",
+    "send" : "node send",
     "autorun" : "lhci autorun",
     "all" : "node lighthouse && lhci autorun && node send"
   },

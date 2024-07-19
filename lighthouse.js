@@ -1,10 +1,5 @@
 const fs = require("fs");
 const {chromium,devices} = require("playwright");
-// import {chromium,devices} from "playwright";
-// import TelegramBot from 'node-telegram-bot-api';
-
-const token = '6168835435:AAEX-jYqum2mD4N2ath6_QihrqjPC5GJ-C4';
-const chatId = 6252259316;
 
 async function test() {
     const browser = await chromium.launch({ headless: true});
