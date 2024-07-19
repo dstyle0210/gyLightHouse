@@ -1,6 +1,6 @@
 {
-  "name": "dstyle-stocks-action-crawler",
-  "version": "1.0.0",
+  "name": "dstyle-gyReport",
+  "version": "0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
