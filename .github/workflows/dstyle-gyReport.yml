@@ -31,4 +31,4 @@ jobs:
         TG_CHATID_MABONGPAPA : ${{secrets.TG_CHATID_MABONGPAPA}}
       run: |
         npm install
-        npm run send
+        npm run all
